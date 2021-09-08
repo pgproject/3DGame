@@ -1,0 +1,98 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 639fe64e94d1c3044a7b00886adca18c, type: 3}
+  m_Name: GeneralAccess
+  m_EditorClassIdentifier: 
+  m_inputAccess:
+    m_mousePosition:
+      m_UseReference: 1
+      m_Action:
+        m_Name: Mouse Position
+        m_Type: 0
+        m_ExpectedControlType: 
+        m_Id: 60138dce-5afe-4c37-834d-77e2af8e58a0
+        m_Processors: 
+        m_Interactions: 
+        m_SingletonActionBindings: []
+      m_Reference: {fileID: 4637126674537172384, guid: c4ad57ef523ae5045a395b6f106b708a, type: 3}
+    m_leftArrow:
+      m_UseReference: 1
+      m_Action:
+        m_Name: Left Arrow
+        m_Type: 0
+        m_ExpectedControlType: 
+        m_Id: b73703cc-a3fc-48b9-8092-e008ea43f3f1
+        m_Processors: 
+        m_Interactions: 
+        m_SingletonActionBindings: []
+      m_Reference: {fileID: -337203384547358831, guid: c4ad57ef523ae5045a395b6f106b708a, type: 3}
+    m_rightArrow:
+      m_UseReference: 1
+      m_Action:
+        m_Name: Right Arrow
+        m_Type: 0
+        m_ExpectedControlType: 
+        m_Id: 34752a15-a8db-4f93-b66f-d180a8f70a28
+        m_Processors: 
+        m_Interactions: 
+        m_SingletonActionBindings: []
+      m_Reference: {fileID: 3790871596424778860, guid: c4ad57ef523ae5045a395b6f106b708a, type: 3}
+    m_downArrow:
+      m_UseReference: 1
+      m_Action:
+        m_Name: Down Arrow
+        m_Type: 0
+        m_ExpectedControlType: 
+        m_Id: c5bca45d-dcf4-4738-8886-828af8bc162b
+        m_Processors: 
+        m_Interactions: 
+        m_SingletonActionBindings: []
+      m_Reference: {fileID: 1571901534330329713, guid: c4ad57ef523ae5045a395b6f106b708a, type: 3}
+    m_upArrow:
+      m_UseReference: 1
+      m_Action:
+        m_Name: Up Arrow
+        m_Type: 0
+        m_ExpectedControlType: 
+        m_Id: c272a454-d241-4d1d-ab5d-407d2ea46ea8
+        m_Processors: 
+        m_Interactions: 
+        m_SingletonActionBindings: []
+      m_Reference: {fileID: -3021236288028241075, guid: c4ad57ef523ae5045a395b6f106b708a, type: 3}
+    m_meleeAttack:
+      m_UseReference: 1
+      m_Action:
+        m_Name: Melee Attack
+        m_Type: 0
+        m_ExpectedControlType: 
+        m_Id: 5719f098-8c50-42b8-becf-37a6436f0461
+        m_Processors: 
+        m_Interactions: 
+        m_SingletonActionBindings: []
+      m_Reference: {fileID: 781150116048387363, guid: c4ad57ef523ae5045a395b6f106b708a, type: 3}
+    m_rangedAttack:
+      m_UseReference: 1
+      m_Action:
+        m_Name: Ranged Attack
+        m_Type: 0
+        m_ExpectedControlType: 
+        m_Id: 24970a2e-359c-4731-b28f-67d5e0c14e06
+        m_Processors: 
+        m_Interactions: 
+        m_SingletonActionBindings: []
+      m_Reference: {fileID: -7874782627858271733, guid: c4ad57ef523ae5045a395b6f106b708a, type: 3}
+  m_playerStats:
+    m_maxHp: 0
+    m_startHp: 0
+    m_meleeAttackDamage: 0
+    m_rangedAttackDamage: 0
+    m_rangedAttackDistance: 0
