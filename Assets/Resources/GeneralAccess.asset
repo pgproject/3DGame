@@ -91,8 +91,15 @@ MonoBehaviour:
         m_SingletonActionBindings: []
       m_Reference: {fileID: -7874782627858271733, guid: c4ad57ef523ae5045a395b6f106b708a, type: 3}
   m_playerStats:
-    m_maxHp: 0
-    m_startHp: 0
-    m_meleeAttackDamage: 0
-    m_rangedAttackDamage: 0
-    m_rangedAttackDistance: 0
+    m_maxHp: 10
+    m_startHp: 10
+    m_meleeAttackDamage: 2
+    m_rangedAttackDamage: 1
+    m_rangedAttackDistance: 10
+    m_speedMoving: 4
+  m_enemyStats:
+    m_startHp: 5
+    m_damage: 1
+    m_rangedattackDistance: 10
+    m_speedMoving: 2
+    m_meleeAttackDistance: 1

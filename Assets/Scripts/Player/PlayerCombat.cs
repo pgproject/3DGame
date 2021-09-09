@@ -8,7 +8,7 @@ public class PlayerCombat : AbstractCombat
     [SerializeField] private Animator m_animmator;
     [SerializeField] private Transform m_ragnedWeaponBarrelTransformm;
     
-    private AbstractCombat m_enemy;
+    private Enemy m_enemy;
     private PlayerStats m_playerStats;
     private RaycastHit m_raycastHit;
 
@@ -21,37 +21,43 @@ public class PlayerCombat : AbstractCombat
         m_currentHp = m_playerStats.StartHp;
     }
 
-    public void MeleeAttack()
+    public override void MeleeAttack()
     {
         m_animmator.SetTrigger(MELEE_ATTACK);
-        m_enemy?.Damage(m_playerStats.MeleeAttackDamage);
     }
 
-    public void RangedAttack()
+    public override void RangedAttack()
     {
         m_animmator.SetTrigger(RANGED_ATTACK);
 
         if (Physics.Raycast(m_ragnedWeaponBarrelTransformm.position, m_ragnedWeaponBarrelTransformm.forward,
             out m_raycastHit, m_playerStats.RangedAttackDistance))
-            if (m_raycastHit.rigidbody.GetComponent<AbstractCombat>() != null)
-                m_enemy = m_raycastHit.rigidbody.GetComponent<AbstractCombat>();
-    
+        {
+            if (m_raycastHit.rigidbody.GetComponent<Enemy>() != null)
+                m_enemy = m_raycastHit.rigidbody.GetComponent<Enemy>();
+        }
+        else
+        {
+            m_enemy = null;
+        }
+        
         if (m_enemy != null)
         {
             m_enemy.Damage(m_playerStats.RangedAttackDamage);
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    public override void SetTarget(AbstractCombat abstractCombat)
     {
-        if (other.GetComponent<AbstractCombat>() != null)
-            m_enemy = other.GetComponent<AbstractCombat>();
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.GetComponent<AbstractCombat>() != null)
+        if (abstractCombat != null)
+        {
+            m_enemy = abstractCombat.GetComponent<Enemy>();
+            m_enemy?.Damage(m_playerStats.MeleeAttackDamage);
+        }
+        else
+        {
             m_enemy = null;
+        }
     }
 
 }

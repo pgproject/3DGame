@@ -10,7 +10,13 @@ namespace Combat
         public void Damage(int damage)
         {
             m_currentHp -= damage;
+            Debug.Log(m_currentHp);
         }
-      
+
+        public abstract void MeleeAttack();
+
+        public abstract void RangedAttack();
+
+        public abstract void SetTarget(AbstractCombat abstractCombat);
     }
 }

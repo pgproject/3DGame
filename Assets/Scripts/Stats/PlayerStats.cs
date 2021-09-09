@@ -21,5 +21,7 @@ public class PlayerStats
 
     [SerializeField] private float m_rangedAttackDistance;
     public float RangedAttackDistance => m_rangedAttackDistance;
-
+    
+    [SerializeField] private float m_speedMoving;
+    public float SpeedMoving => m_speedMoving;
 }
