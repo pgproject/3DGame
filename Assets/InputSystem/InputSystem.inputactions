@@ -6,10 +6,18 @@
             "id": "010ab74c-7a2d-429b-b274-cb820cf2c9eb",
             "actions": [
                 {
-                    "name": "MousePosition",
+                    "name": "MousePositionY",
+                    "type": "Value",
+                    "id": "a48b0f54-70ec-4e0b-a756-48a34c348a91",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "MousePositionX",
                     "type": "Value",
                     "id": "58cbb608-9c87-490a-855c-34d8f6be196e",
-                    "expectedControlType": "Vector2",
+                    "expectedControlType": "Axis",
                     "processors": "",
                     "interactions": ""
                 },
@@ -66,11 +74,11 @@
                 {
                     "name": "",
                     "id": "90e23f53-a774-41b8-adb8-3c3c51d94876",
-                    "path": "<Mouse>/position",
+                    "path": "<Mouse>/position/x",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "MousePosition",
+                    "action": "MousePositionX",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -137,6 +145,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "RangedAttack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6e772d39-e9b1-46df-bccc-596aa806e73f",
+                    "path": "<Mouse>/position/y",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MousePositionY",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

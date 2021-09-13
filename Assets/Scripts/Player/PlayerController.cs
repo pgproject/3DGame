@@ -37,9 +37,9 @@ public class PlayerController : MonoBehaviour
     void Update()
     { 
        
-        m_mousePos =
+        /*m_mousePos =
             m_camera.ScreenToWorldPoint(new Vector3(m_inputAccess.MousePosition.reference.action.ReadValue<Vector2>().x, 
-                m_inputAccess.MousePosition.reference.action.ReadValue<Vector2>().y, m_camera.nearClipPlane));
+                m_inputAccess.MousePosition.reference.action.ReadValue<Vector2>().y, m_camera.nearClipPlane));*/
 
         m_yRotation = m_mousePos.x;
         

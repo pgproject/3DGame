@@ -1,14 +1,18 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.InputSystem;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 [Serializable]
 public class InputAccess
 {
-    [SerializeField] private InputActionProperty m_mousePosition;
-    public InputActionProperty MousePosition => m_mousePosition;
+    [SerializeField] private InputActionProperty m_mousePositionX;
+    public InputActionProperty MousePositionX => m_mousePositionX;
+
+    [SerializeField] private InputActionProperty m_mousePositionY;
+    public InputActionProperty MousePositionY => m_mousePositionY;
 
     [SerializeField] private InputActionProperty m_leftArrow;
     public InputActionProperty LeftArrow => m_leftArrow;

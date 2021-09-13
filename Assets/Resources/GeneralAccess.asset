@@ -13,17 +13,28 @@ MonoBehaviour:
   m_Name: GeneralAccess
   m_EditorClassIdentifier: 
   m_inputAccess:
-    m_mousePosition:
+    m_mousePositionX:
       m_UseReference: 1
       m_Action:
-        m_Name: Mouse Position
+        m_Name: Mouse Position X
         m_Type: 0
         m_ExpectedControlType: 
-        m_Id: 60138dce-5afe-4c37-834d-77e2af8e58a0
+        m_Id: 3650aebe-a19d-4fec-9fc4-48c6eddd3930
         m_Processors: 
         m_Interactions: 
         m_SingletonActionBindings: []
       m_Reference: {fileID: 4637126674537172384, guid: c4ad57ef523ae5045a395b6f106b708a, type: 3}
+    m_mousePositionY:
+      m_UseReference: 1
+      m_Action:
+        m_Name: Mouse Position Y
+        m_Type: 0
+        m_ExpectedControlType: 
+        m_Id: 2788fea4-c6f5-41a2-9b4b-7c9810a759e3
+        m_Processors: 
+        m_Interactions: 
+        m_SingletonActionBindings: []
+      m_Reference: {fileID: 8018217575088868016, guid: c4ad57ef523ae5045a395b6f106b708a, type: 3}
     m_leftArrow:
       m_UseReference: 1
       m_Action:

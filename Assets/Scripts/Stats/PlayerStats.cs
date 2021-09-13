@@ -24,4 +24,15 @@ public class PlayerStats
     
     [SerializeField] private float m_speedMoving;
     public float SpeedMoving => m_speedMoving;
+
+    [SerializeField] private float m_speedVerticalRotation;
+    public float SpeedVerticalRotation => m_speedVerticalRotation;
+
+    [SerializeField] private float m_speedHorizontalRotation;
+    public float SpeedHorizontalRotation => m_speedHorizontalRotation;
+    
+    [SerializeField] private float m_xRotationClampMin, m_xRotationClampMax;
+    public float XRotationClampMin => m_xRotationClampMin;
+
+    public float XRotationClampMax => m_xRotationClampMax;
 }
