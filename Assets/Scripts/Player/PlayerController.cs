@@ -10,16 +10,15 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private Rigidbody m_rigidbody;
     [SerializeField] private Transform m_cameraTransform;
-    private float m_yRotation;
-    private Vector3 m_mousePos;
-    [SerializeField] private Camera m_camera;
-    [SerializeField] private float m_speedRotateHorizontal = 10f;
+    [SerializeField] private PlayerCombat m_playerCombat;
 
     
+    private float m_yRotation;
+    private float m_speedRotateHorizontal;
+
     private InputAccess m_inputAccess;
     private PlayerStats m_playerStats;
-    
-    [SerializeField] private PlayerCombat m_playerCombat;
+    private InputAction m_mousePositionX;
     private void Awake()
     {
         m_inputAccess = GeneralScriptableObject.Instance.InputAccess;
@@ -30,6 +29,8 @@ public class PlayerController : MonoBehaviour
         m_inputAccess.LeftArrow.reference.action.canceled += StopMove;
         m_inputAccess.RightArrow.reference.action.canceled += StopMove;
         
+        m_speedRotateHorizontal = m_playerStats.SpeedHorizontalRotation;
+        m_mousePositionX = m_inputAccess.MousePositionX.reference.action;
     }
 
     private Vector3 m_forwardDirection;
@@ -37,11 +38,9 @@ public class PlayerController : MonoBehaviour
     void Update()
     { 
        
-        m_mousePos =
-            m_camera.ScreenToWorldPoint(new Vector3(m_inputAccess.MousePositionX.reference.action.ReadValue<float>(),m_inputAccess.MousePositionX.reference.action.ReadValue<float>(), m_camera.nearClipPlane));
+        m_yRotation = m_mousePositionX.ReadValue<float>() * Time.fixedDeltaTime * m_speedRotateHorizontal;
 
-        m_yRotation = m_mousePos.x;
-        transform.eulerAngles = new Vector3(0, m_yRotation, 0);
+        transform.localRotation = Quaternion.Euler(0, m_yRotation, 0);
         
         m_forwardDirection = m_cameraTransform.forward;
         m_rightDirection = m_cameraTransform.right;
