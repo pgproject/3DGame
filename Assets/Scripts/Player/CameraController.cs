@@ -30,9 +30,9 @@ public class CameraController : MonoBehaviour
     }
     void Update()
     {
-        m_pitch -= (m_mousePositionY.ReadValue<float>() - m_pixelHeight) * m_verticalRotationSpeed * Time.deltaTime;
-        m_pitch = Mathf.Clamp(m_pitch, m_xRotationClampMin, m_xRotationClampMax);
+        m_pitch = (m_mousePositionY.ReadValue<float>() - m_pixelHeight) * m_verticalRotationSpeed;
+        m_pitch = Mathf.Clamp(-m_pitch, m_xRotationClampMin, m_xRotationClampMax);
         
-        transform.localRotation = Quaternion.Euler(m_pitch, 0, 0);
+        transform.rotation = Quaternion.Euler(m_pitch, 0, 0);
     }
 }
