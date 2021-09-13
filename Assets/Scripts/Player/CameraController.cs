@@ -34,5 +34,7 @@ public class CameraController : MonoBehaviour
         m_pitch = Mathf.Clamp(-m_pitch, m_xRotationClampMin, m_xRotationClampMax);
         
         transform.rotation = Quaternion.Euler(m_pitch, 0, 0);
+        transform.localRotation = Quaternion.Euler(transform.localEulerAngles.x, 0, 0);
+
     }
 }
