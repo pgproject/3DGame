@@ -8,7 +8,7 @@ public class CameraController : MonoBehaviour
 {
     [SerializeField] private Camera m_camera;
 
-    private float m_pixelHight;
+    private float m_pixelHeight;
     private InputAccess m_inputAccess;
     private PlayerStats m_playerStats;
     private Vector3 m_mousePos;
@@ -16,7 +16,7 @@ public class CameraController : MonoBehaviour
     private float m_verticalRotationSpeed;
     private float m_xRotationClampMin;
     private float m_xRotationClampMax;
-    private float m_cameraNearPlane;
+    private InputAction m_mousePositionY;
     private void Awake()
     {
         m_inputAccess = GeneralScriptableObject.Instance.InputAccess;
@@ -25,16 +25,12 @@ public class CameraController : MonoBehaviour
         m_verticalRotationSpeed = m_playerStats.SpeedVerticalRotation;
         m_xRotationClampMin = m_playerStats.XRotationClampMin;
         m_xRotationClampMax = m_playerStats.XRotationClampMax;
-        m_pixelHight = m_camera.pixelHeight / 2;
-        m_cameraNearPlane = m_camera.nearClipPlane;
+        m_pixelHeight = m_camera.pixelHeight / 2;
+        m_mousePositionY = m_inputAccess.MousePositionY.reference.action;
     }
     void Update()
     {
-        
-        m_mousePos =
-            new Vector3(m_inputAccess.MousePositionX.reference.action.ReadValue<float>(), m_inputAccess.MousePositionY.reference.action.ReadValue<float>() - m_pixelHight, m_cameraNearPlane);
-        
-        m_pitch -= m_mousePos.y * m_verticalRotationSpeed * Time.deltaTime;
+        m_pitch -= (m_mousePositionY.ReadValue<float>() - m_pixelHeight) * m_verticalRotationSpeed * Time.deltaTime;
         m_pitch = Mathf.Clamp(m_pitch, m_xRotationClampMin, m_xRotationClampMax);
         
         transform.localRotation = Quaternion.Euler(m_pitch, 0, 0);

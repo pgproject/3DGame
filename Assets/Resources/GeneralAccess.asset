@@ -108,6 +108,10 @@ MonoBehaviour:
     m_rangedAttackDamage: 1
     m_rangedAttackDistance: 10
     m_speedMoving: 4
+    m_speedVerticalRotation: 0.1
+    m_speedHorizontalRotation: 0
+    m_xRotationClampMin: -90
+    m_xRotationClampMax: 50
   m_enemyStats:
     m_startHp: 5
     m_damage: 1

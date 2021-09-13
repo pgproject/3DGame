@@ -37,11 +37,11 @@ public class PlayerController : MonoBehaviour
     void Update()
     { 
        
-        /*m_mousePos =
-            m_camera.ScreenToWorldPoint(new Vector3(m_inputAccess.MousePosition.reference.action.ReadValue<Vector2>().x, 
-                m_inputAccess.MousePosition.reference.action.ReadValue<Vector2>().y, m_camera.nearClipPlane));*/
+        m_mousePos =
+            m_camera.ScreenToWorldPoint(new Vector3(m_inputAccess.MousePositionX.reference.action.ReadValue<float>(),m_inputAccess.MousePositionX.reference.action.ReadValue<float>(), m_camera.nearClipPlane));
 
         m_yRotation = m_mousePos.x;
+        transform.eulerAngles = new Vector3(0, m_yRotation, 0);
         
         m_forwardDirection = m_cameraTransform.forward;
         m_rightDirection = m_cameraTransform.right;

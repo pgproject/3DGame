@@ -648,12 +648,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15e07a4564a3a6545a5b487de3cea73d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_xRotationClampMin: -90
-  m_xRotationClampMax: 90
-  m_speedV: 20
   m_camera: {fileID: 963194227}
-  m_speedRotateHorizontal: 1
-  m_player: {fileID: 774980846}
 --- !u!1 &1283938853
 GameObject:
   m_ObjectHideFlags: 0
