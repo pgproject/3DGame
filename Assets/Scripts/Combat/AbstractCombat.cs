@@ -7,9 +7,10 @@ namespace Combat
     {
         protected int m_currentHp;
 
-        public void Damage(int damage)
+        public virtual void Damage(int damage)
         {
             m_currentHp -= damage;
+            //After enemy death object come back to pool
             Debug.Log(m_currentHp);
         }
 
@@ -18,5 +19,7 @@ namespace Combat
         public abstract void RangedAttack();
 
         public abstract void SetTarget(AbstractCombat abstractCombat);
+
+        public abstract void ResetHp();
     }
 }

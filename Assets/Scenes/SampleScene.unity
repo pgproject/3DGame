@@ -353,8 +353,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_rigidbody: {fileID: 774980849}
   m_cameraTransform: {fileID: 963194228}
-  m_camera: {fileID: 963194227}
-  m_speedRotateHorizontal: 100
   m_playerCombat: {fileID: 774980855}
 --- !u!54 &774980849
 Rigidbody:

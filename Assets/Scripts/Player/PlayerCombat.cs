@@ -60,4 +60,8 @@ public class PlayerCombat : AbstractCombat
         }
     }
 
+    public override void ResetHp()
+    {
+        m_currentHp = m_playerStats.StartHp;
+    }
 }

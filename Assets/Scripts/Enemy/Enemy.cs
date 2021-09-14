@@ -9,6 +9,7 @@ public class Enemy : AbstractCombat
     [SerializeField] private Transform m_rangedWeaponTransform;
     [SerializeField] private Transform m_playerTransform;
     [SerializeField] private Rigidbody m_rigidbody;
+    [SerializeField] private EnemiesPool m_enemiesPool;
     
     private EnemyStats m_enemyStats;
     private RaycastHit m_raycastHit;
@@ -80,6 +81,17 @@ public class Enemy : AbstractCombat
         }
     }
 
+    public override void ResetHp()
+    {
+        m_currentHp = m_enemyStats.StartHp;
+    }
+
+    public override void Damage(int damage)
+    {
+        base.Damage(damage);
+        if (m_currentHp <= 0)
+            m_enemiesPool.PutObjectToPool(this.gameObject);
+    }
 
     private void OnValidate()
     {
