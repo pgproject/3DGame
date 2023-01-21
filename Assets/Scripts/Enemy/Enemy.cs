@@ -9,7 +9,7 @@ public class Enemy : AbstractCombat
     [SerializeField] private Transform m_rangedWeaponTransform;
     [SerializeField] private Transform m_playerTransform;
     [SerializeField] private Rigidbody m_rigidbody;
-    [SerializeField] private EnemiesPool m_enemiesPool;
+    [SerializeField] private Pool m_enemiesPool;
     
     private EnemyStats m_enemyStats;
     private RaycastHit m_raycastHit;
@@ -38,7 +38,7 @@ public class Enemy : AbstractCombat
                 if (m_raycastHit.rigidbody.GetComponent<PlayerCombat>() != null)
                 {
                     m_playerCombat = m_raycastHit.rigidbody.GetComponent<PlayerCombat>();
-                    RangedAttack();
+                    //RangedAttack();
                 }
                 else
                 {
@@ -52,24 +52,12 @@ public class Enemy : AbstractCombat
                 m_rigidbody.MovePosition(m_playerTransform.position);
             else if(m_playerCombat != null)
             {
-                MeleeAttack();
+                //MeleeAttack();
             }
         }
     }
     
-    public override void MeleeAttack()
-    {
-        //set Animation for this type of attack
-        
-        m_playerCombat?.Damage(m_enemyStats.Damage);
-    }
-
-    public override void RangedAttack()
-    {
-        //set Animation for this type of attack
-
-        m_playerCombat?.Damage(m_enemyStats.Damage);
-    }
+    
 
     public override void SetTarget(AbstractCombat abstractCombat)
     {
@@ -97,5 +85,10 @@ public class Enemy : AbstractCombat
     {
         m_rigidbody = GetComponent<Rigidbody>();
         m_playerTransform = FindObjectOfType<PlayerController>().transform;
+    }
+
+    public override void Attack()
+    {
+        throw new NotImplementedException();
     }
 }

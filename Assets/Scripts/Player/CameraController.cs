@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Timers;
@@ -6,35 +7,46 @@ using UnityEngine.InputSystem;
 
 public class CameraController : MonoBehaviour
 {
-    [SerializeField] private Camera m_camera;
-
-    private float m_pixelHeight;
     private InputAccess m_inputAccess;
+    private InputAction m_mouseDeltaInput;
     private PlayerStats m_playerStats;
-    private Vector3 m_mousePos;
-    private float m_pitch;
-    private float m_verticalRotationSpeed;
-    private float m_xRotationClampMin;
-    private float m_xRotationClampMax;
-    private InputAction m_mousePositionY;
-    private void Awake()
+
+    private float m_mouseSensitivity;
+    private float m_smoothing;
+    private float m_minYRotation;
+    private float m_maxYRotation;
+    
+    private Vector2 m_mouseDelta;
+    private Vector2 m_frameVelocity;
+    private Vector2 m_rawFrameVelocity;
+    private Vector2 m_velocity;
+
+    [SerializeField] private Transform m_playerTransform;
+
+    private void Start()
     {
-        m_inputAccess = GeneralScriptableObject.Instance.InputAccess;
-        m_playerStats = GeneralScriptableObject.Instance.PlayerStats;
+        Cursor.lockState = CursorLockMode.Locked;
         
-        m_verticalRotationSpeed = m_playerStats.SpeedVerticalRotation;
-        m_xRotationClampMin = m_playerStats.XRotationClampMin;
-        m_xRotationClampMax = m_playerStats.XRotationClampMax;
-        m_pixelHeight = m_camera.pixelHeight / 2;
-        m_mousePositionY = m_inputAccess.MousePositionY.reference.action;
+        m_playerStats = GeneralScriptableObject.Instance.PlayerStats;
+        m_inputAccess = GeneralScriptableObject.Instance.InputAccess;
+        m_mouseDeltaInput = m_inputAccess.MouseDelta.reference.action;
+        
+        m_mouseSensitivity = m_playerStats.MouseSensitivity;
+        m_smoothing = m_playerStats.CameraSmoothing;
+        m_minYRotation = m_playerStats.CameraYRotationMin;
+        m_maxYRotation = m_playerStats.CameraYRotationMax;
     }
+
     void Update()
     {
-        m_pitch = (m_mousePositionY.ReadValue<float>() - m_pixelHeight) * m_verticalRotationSpeed;
-        m_pitch = Mathf.Clamp(-m_pitch, m_xRotationClampMin, m_xRotationClampMax);
+        m_mouseDelta = m_mouseDeltaInput.ReadValue<Vector2>();
+        m_rawFrameVelocity = Vector2.Scale(m_mouseDelta, Vector2.one * m_mouseSensitivity);
         
-        transform.rotation = Quaternion.Euler(m_pitch, 0, 0);
-        transform.localRotation = Quaternion.Euler(transform.localEulerAngles.x, 0, 0);
-
+        m_frameVelocity = Vector2.Lerp(m_frameVelocity, m_rawFrameVelocity, 1 / m_smoothing);
+        m_velocity += m_frameVelocity;
+        m_velocity.y = Mathf.Clamp(m_velocity.y, m_minYRotation, m_maxYRotation);
+        
+        transform.localRotation = Quaternion.AngleAxis(-m_velocity.y, Vector3.right);
+        m_playerTransform.localRotation = Quaternion.AngleAxis(m_velocity.x, Vector3.up);
     }
 }

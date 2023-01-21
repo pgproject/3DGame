@@ -24,15 +24,12 @@ public class PlayerStats
     
     [SerializeField] private float m_speedMoving;
     public float SpeedMoving => m_speedMoving;
-
-    [SerializeField] private float m_speedVerticalRotation;
-    public float SpeedVerticalRotation => m_speedVerticalRotation;
-
-    [SerializeField] private float m_speedHorizontalRotation;
-    public float SpeedHorizontalRotation => m_speedHorizontalRotation;
     
-    [SerializeField] private float m_xRotationClampMin, m_xRotationClampMax;
-    public float XRotationClampMin => m_xRotationClampMin;
-
-    public float XRotationClampMax => m_xRotationClampMax;
+    [SerializeField] private float m_cameraYRotationMin, m_cameraYRotationMax;
+    public float CameraYRotationMin => m_cameraYRotationMin;
+    public float CameraYRotationMax => m_cameraYRotationMax;
+    [SerializeField] private float m_mouseSensitivity;
+    public float MouseSensitivity => m_mouseSensitivity;
+    [SerializeField] private float m_cameraSmoothing;
+    public float CameraSmoothing => m_cameraSmoothing;
 }

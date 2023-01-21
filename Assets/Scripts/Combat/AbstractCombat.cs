@@ -14,9 +14,7 @@ namespace Combat
             Debug.Log(m_currentHp);
         }
 
-        public abstract void MeleeAttack();
-
-        public abstract void RangedAttack();
+        public abstract void Attack();
 
         public abstract void SetTarget(AbstractCombat abstractCombat);
 

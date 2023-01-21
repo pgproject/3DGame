@@ -13,68 +13,24 @@ MonoBehaviour:
   m_Name: GeneralAccess
   m_EditorClassIdentifier: 
   m_inputAccess:
-    m_mousePositionX:
+    m_mouseDelta:
       m_UseReference: 1
       m_Action:
-        m_Name: Mouse Position X
+        m_Name: Mouse Delta
         m_Type: 0
         m_ExpectedControlType: 
-        m_Id: 3650aebe-a19d-4fec-9fc4-48c6eddd3930
-        m_Processors: 
-        m_Interactions: 
-        m_SingletonActionBindings: []
-      m_Reference: {fileID: 4637126674537172384, guid: c4ad57ef523ae5045a395b6f106b708a, type: 3}
-    m_mousePositionY:
-      m_UseReference: 1
-      m_Action:
-        m_Name: Mouse Position Y
-        m_Type: 0
-        m_ExpectedControlType: 
-        m_Id: 2788fea4-c6f5-41a2-9b4b-7c9810a759e3
+        m_Id: 0a4557dc-7a7c-422c-9d54-dcb7b0277aca
         m_Processors: 
         m_Interactions: 
         m_SingletonActionBindings: []
       m_Reference: {fileID: 8018217575088868016, guid: c4ad57ef523ae5045a395b6f106b708a, type: 3}
-    m_leftArrow:
+    m_move:
       m_UseReference: 1
       m_Action:
-        m_Name: Left Arrow
+        m_Name: Move
         m_Type: 0
         m_ExpectedControlType: 
-        m_Id: b73703cc-a3fc-48b9-8092-e008ea43f3f1
-        m_Processors: 
-        m_Interactions: 
-        m_SingletonActionBindings: []
-      m_Reference: {fileID: -337203384547358831, guid: c4ad57ef523ae5045a395b6f106b708a, type: 3}
-    m_rightArrow:
-      m_UseReference: 1
-      m_Action:
-        m_Name: Right Arrow
-        m_Type: 0
-        m_ExpectedControlType: 
-        m_Id: 34752a15-a8db-4f93-b66f-d180a8f70a28
-        m_Processors: 
-        m_Interactions: 
-        m_SingletonActionBindings: []
-      m_Reference: {fileID: 3790871596424778860, guid: c4ad57ef523ae5045a395b6f106b708a, type: 3}
-    m_downArrow:
-      m_UseReference: 1
-      m_Action:
-        m_Name: Down Arrow
-        m_Type: 0
-        m_ExpectedControlType: 
-        m_Id: c5bca45d-dcf4-4738-8886-828af8bc162b
-        m_Processors: 
-        m_Interactions: 
-        m_SingletonActionBindings: []
-      m_Reference: {fileID: 1571901534330329713, guid: c4ad57ef523ae5045a395b6f106b708a, type: 3}
-    m_upArrow:
-      m_UseReference: 1
-      m_Action:
-        m_Name: Up Arrow
-        m_Type: 0
-        m_ExpectedControlType: 
-        m_Id: c272a454-d241-4d1d-ab5d-407d2ea46ea8
+        m_Id: 5a9e6cad-aec1-428f-90b3-2e5818f8ebf2
         m_Processors: 
         m_Interactions: 
         m_SingletonActionBindings: []
@@ -108,13 +64,18 @@ MonoBehaviour:
     m_rangedAttackDamage: 1
     m_rangedAttackDistance: 10
     m_speedMoving: 4
-    m_speedVerticalRotation: 0.1
-    m_speedHorizontalRotation: 10
-    m_xRotationClampMin: -90
-    m_xRotationClampMax: 50
+    m_cameraYRotationMin: -90
+    m_cameraYRotationMax: 90
+    m_mouseSensitivity: 0.1
+    m_cameraSmoothing: 10
   m_enemyStats:
     m_startHp: 5
     m_damage: 1
     m_rangedattackDistance: 10
     m_speedMoving: 2
     m_meleeAttackDistance: 1
+  m_weaponStats:
+  - m_name: 
+    m_meshRenderer: {fileID: 0}
+    m_damage: 0
+    m_animator: {fileID: 0}

@@ -352,7 +352,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_rigidbody: {fileID: 774980849}
-  m_cameraTransform: {fileID: 963194228}
   m_playerCombat: {fileID: 774980855}
 --- !u!54 &774980849
 Rigidbody:
@@ -646,7 +645,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15e07a4564a3a6545a5b487de3cea73d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_camera: {fileID: 963194227}
+  m_playerTransform: {fileID: 774980853}
 --- !u!1 &1283938853
 GameObject:
   m_ObjectHideFlags: 0
@@ -780,6 +779,7 @@ MonoBehaviour:
   m_rangedWeaponTransform: {fileID: 0}
   m_playerTransform: {fileID: 774980853}
   m_rigidbody: {fileID: 1456167003}
+  m_enemiesPool: {fileID: 0}
 --- !u!54 &1456167003
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -873,6 +873,53 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1692123318
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1692123320}
+  - component: {fileID: 1692123319}
+  m_Layer: 0
+  m_Name: PoolBullet
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1692123319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1692123318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6c7a4bfc1bc0644dbc8948382faf129, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_amountOfObjects: 30
+  m_spawnPosition: {x: 0, y: 0, z: 0}
+  m_object: {fileID: 7250837345213388421, guid: e2be61d2b2a6fed44adfd8a00f614d97, type: 3}
+  m_parentTransform: {fileID: 0}
+--- !u!4 &1692123320
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1692123318}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.6279249, y: 2.4219723, z: 0.31303906}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1701282659
 GameObject:
@@ -971,19 +1018,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.37, y: 0.13720757, z: 1.91}
   m_Center: {x: -0.000052657502, y: -0.00000044347186, z: 1.42}
---- !u!114 &1890549492
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1890549489}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3eadfe3cd87ae843bc5f1e072f65d27, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_playerCombat: {fileID: 774980855}
 --- !u!4 &1936270231 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7763809825007691001, guid: 5c59210965ffbcc4093fe99a29edb777, type: 3}

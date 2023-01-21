@@ -33,4 +33,7 @@ public sealed class GeneralScriptableObject : ScriptableObject
     [SerializeField] private EnemyStats m_enemyStats;
     public EnemyStats EnemyStats => m_enemyStats;
 
+    [SerializeField] private List<WeaponStats> m_weaponStats;
+    public List<WeaponStats> WeaponStats => m_weaponStats;
+ 
 }

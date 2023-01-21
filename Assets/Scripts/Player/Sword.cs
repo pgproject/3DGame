@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Sword : MonoBehaviour
+public class Sword : MeleeWeapon
 {
     [SerializeField] private PlayerCombat m_playerCombat;
 
@@ -18,4 +18,5 @@ public class Sword : MonoBehaviour
         if(other.GetComponent<Enemy>() != null)
             m_playerCombat.SetTarget(null);
     }
+    
 }
